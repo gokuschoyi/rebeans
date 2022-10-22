@@ -57,7 +57,7 @@
 }
 
 .sectionLanding{
-  
+  z-index: 10;
   height: 100vh;
   background-image: url('./Assets/Header-Pic.jpg');
   background-position: center 100%;
@@ -84,7 +84,8 @@
 }
 
 .sectionProduct{
-  padding-top:8rem
+  padding-top:8rem;
+  background-color: white;
 }
 
 .ProductsHeading{
@@ -92,11 +93,9 @@
 }
 
 .newsletter-section{
-  color: white;
-  background-color: #fd9595;
-  opacity: 0.7;
-  padding: 30px;
-  margin:6rem
+  color: rgb(0, 0, 0);
+  background-color: white;
+  padding: 2rem;
 }
 
 .newsletterButton{
@@ -121,6 +120,6 @@
 .contactUs-section{
   color: rgb(255, 255, 255);
   background-color: #1d1f2e;
-  padding: 30px;
-  margin:6rem
+  padding: 2rem;
+  
 }

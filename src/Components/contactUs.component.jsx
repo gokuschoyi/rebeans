@@ -5,7 +5,7 @@ const ContactUs = () => {
         <section className='contactUs-section' id='contactUsSection'>
             <div className='container mt-5'>
                 <div className='row justify-content-center'>
-                    <div className='col-6 text-center'>
+                    <div className='col-8 col-sm-12 col-lg-8 text-center'>
                         <form action="#" className="contact-form">
                             <h5 className="title">Contact us</h5>
                             <p className="description">Feel free to contact us if you need any assistance, any help or another question.
