@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import BannerVideo from '../../Assets/Banner_Video2.mp4';
+import BannerVideo from '../../Assets/Banner_Video_Compressed.mp4';
 import LandingSection from '../landingSection.component';
 import Products from '../products.component';
 import NewsLetter from '../newsLetter.component';
