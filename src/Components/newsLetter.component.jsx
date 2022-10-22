@@ -15,7 +15,7 @@ const NewsLetter = () => {
                     <div className='col-8 col-sm-12 col-lg-8'>
                         <div className='container d-flex justify-content-center mt-4 mb-5'>
                             <input type="text" style={{  marginRight: '20px' }} className="form-control" placeholder="Email" />
-                            <button className="btn newsletterButton">SEND</button>
+                            <button className="btn btn-outline-dark newsletterButton">SEND</button>
                         </div>
                     </div>
                 </div>

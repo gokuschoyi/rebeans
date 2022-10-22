@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="py-4 flex-shrink-0" style={{backgroundColor:'black'}}>
             <div className="container mt-3 mb-3" >
-                <div className="row p-3 gy-4 gx-5 ">
+                <div className="row p-3  ">
                     <div className="col-lg-6 col-md-6" style={{textAlign:'justify'}}>
                         <h5 className="h1 text-white">REBEANS.</h5>
                         <p className="small text-muted">Best coffee from the high hills of Wayanad</p>

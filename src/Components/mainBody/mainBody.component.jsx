@@ -29,9 +29,9 @@ const MainBody = () => {
             title[0].style.transform = `scale(${scale})`;
             title[0].style.opacity = opacity / 100
             /* rebeansTitle[0].style.transform = `scale(${scale})`; */
-            
 
-            if (window.scrollY > 2*threshold) {
+
+            if (window.scrollY > 2 * threshold) {
                 topSlider[0].style.display = 'none';
                 bottomSlider[0].style.display = 'none';
                 rebeansTitle[0].style.display = 'none';
@@ -41,11 +41,11 @@ const MainBody = () => {
                 bottomSlider[0].style.display = 'block';
                 rebeansTitle[0].style.display = 'block';
             }
-            
-            if(window.scrollY >100){
-                rebeansTitle[0].style.opacity = (translateY * 0.2)/100;
+
+            if (window.scrollY > 100) {
+                rebeansTitle[0].style.opacity = (translateY * 0.2) / 100;
             }
-            else{
+            else {
                 rebeansTitle[0].style.opacity = 0
             }
         });
@@ -53,28 +53,26 @@ const MainBody = () => {
 
     return (
         <>
-            <div className='çontainer'>
-                <div className='top-slider' style={{ transform: 'translateY()' }}>
-                    <div className="hero__illustration">
-                        <div className='filler filler-white'>
-                        </div>
+            <div className='top-slider' style={{ transform: 'translateY()' }}>
+                <div className="hero__illustration">
+                    <div className='filler filler-white'>
                     </div>
                 </div>
+            </div>
 
-                <h1 className='titleMain' style={{ position: 'fixed',  transform: 'scale(1)', opacity: '1' }}>The Future Of Coffee BY</h1>
-                <h2 className='rebeans-title' style={{opacity:'0'}}>REBEANS</h2>
-                <div className='bottom-slider'>
-                    <div className="hero__illustration">
-                        <div className='filler filler-white'>
-                        </div>
+            <h1 className='titleMain' style={{ position: 'fixed', transform: 'scale(1)', opacity: '1' }}>The Future Of Coffee BY</h1>
+            <h2 className='rebeans-title' style={{ opacity: '0' }}>REBEANS</h2>
+            <div className='bottom-slider'>
+                <div className="hero__illustration">
+                    <div className='filler filler-white'>
                     </div>
                 </div>
-                <div className="trailer">
-                    <div className="video-wrapper">
-                        <video playsInline autoPlay muted loop>
-                            <source src={BannerVideo} type="video/mp4" />
-                        </video>
-                    </div>
+            </div>
+            <div className="trailer">
+                <div className="video-wrapper">
+                    <video playsInline autoPlay muted loop>
+                        <source src={BannerVideo} type="video/mp4" />
+                    </video>
                 </div>
             </div>
         </>

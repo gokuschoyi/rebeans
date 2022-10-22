@@ -17,8 +17,8 @@ function App() {
         <Products />
         <NewsLetter />
         <ContactUs />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

@@ -19,7 +19,7 @@ const Products = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Special Coffee one</h5>
                                 <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="!#" className="btn btn-dark">Add to Cart</a>
+                                <button className="btn btn-dark">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ const Products = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Special Coffee two</h5>
                                 <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="!#" className="btn btn-dark">Add to Cart</a>
+                                <button className="btn btn-dark">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ const Products = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Special Coffee two</h5>
                                 <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="!#" className="btn btn-dark">Add to Cart</a>
+                                <button className="btn btn-dark">Add to Cart</button>
                             </div>
                         </div>
                     </div>

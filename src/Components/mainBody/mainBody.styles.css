@@ -81,7 +81,7 @@
   z-index: -2;
   position: fixed;
   /* margin-top: 43vh; */
-  left:10%;
+  left:14%;
   top:47%;
   color: aliceblue;
 }
@@ -89,7 +89,7 @@
 .content {
   /* pushs content below header hero & trailer (should equal trailer height after threshold) */
   padding-top: 206vh;
-  width: 100%;
+  
   
 }
 
@@ -104,7 +104,9 @@
     font-size: 80px;
     width: 80%;
     left: 10%;
+    
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -132,5 +134,6 @@
     font-size: 80px;
     width: 80%;
     left: 10%;
+    top:51%
   }
 }
