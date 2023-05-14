@@ -4,7 +4,7 @@ import { faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg fixed-top p-3" style={{backgroundColor:'white'}}>
+        <nav className="navbar navbar-expand-lg p-3" style={{backgroundColor:'white'}}>
             <div className="container-fluid">
                 <a className="navbar-brand nav-heading" href="!">Rebeans</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

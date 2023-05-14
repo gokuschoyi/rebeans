@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react'
 import BannerVideo from '../../Assets/Banner_Video_Compressed.mp4';
-import LandingSection from '../landingSection.component';
-import Products from '../products.component';
-import NewsLetter from '../newsLetter.component';
-import ContactUs from '../contactUs.component';
-
 import './mainBody.styles.css';
+import Pic from '../../Assets/main.jpg'
+import Pic1 from '../../Assets/main2.jpg'
 
 const MainBody = () => {
 
@@ -21,17 +18,11 @@ const MainBody = () => {
         window.addEventListener('scroll', function () {
             let translateY = window.scrollY / 2;
             let scrollY = window.scrollY;
-            let scale = 1 + window.scrollY / 50;
-            let opacity = 100 - (window.scrollY * 0.5);
-            /* console.log({ threshold, scrollY, translateY }); */
-            topSlider[0].style.transform = `translateY(-${translateY}px)`;
-            bottomSlider[0].style.transform = `translateY(${translateY}px)`;
-            title[0].style.transform = `scale(${scale})`;
-            title[0].style.opacity = opacity / 100
+
+            console.log({ threshold, scrollY, translateY });
             /* rebeansTitle[0].style.transform = `scale(${scale})`; */
 
-
-            if (window.scrollY > 2 * threshold) {
+            if (scrollY > (2.2 * threshold)) {
                 topSlider[0].style.display = 'none';
                 bottomSlider[0].style.display = 'none';
                 rebeansTitle[0].style.display = 'none';
@@ -40,9 +31,15 @@ const MainBody = () => {
                 topSlider[0].style.display = 'block';
                 bottomSlider[0].style.display = 'block';
                 rebeansTitle[0].style.display = 'block';
+                let scale = 1 + scrollY / 140;
+                let opacity = Math.max(0, 100 - (scrollY * 0.2));
+                topSlider[0].style.transform = `translateY(-${translateY}px)`;
+                bottomSlider[0].style.transform = `translateY(${translateY}px)`;
+                title[0].style.transform = `scale(${scale})`;
+                title[0].style.opacity = opacity / 100
             }
 
-            if (window.scrollY > 100) {
+            if (scrollY > 100 && scrollY < (2 * threshold)) {
                 rebeansTitle[0].style.opacity = (translateY * 0.2) / 100;
             }
             else {
@@ -55,19 +52,25 @@ const MainBody = () => {
         <>
             <div className='top-slider' style={{ transform: 'translateY()' }}>
                 <div className="hero__illustration">
-                    <div className='filler filler-white'>
+                    <div className='filler filler-white' style={{ position: 'fixed', top: '0' }}>
+                        <img src={Pic} alt="Top Half" className="slider-image" />
                     </div>
                 </div>
             </div>
 
-            <h1 className='titleMain' style={{ position: 'fixed', transform: 'scale(1)', opacity: '1' }}>The Future Of Coffee BY</h1>
-            <h2 className='rebeans-title' style={{ opacity: '0' }}>REBEANS</h2>
+            <div className='titleMain'>
+                <h1 className='title-font' style={{ transform: 'scale(1)', opacity: '1' }}>"Escape to Tranquility" Unwind in Makki Mala's Hillside Retreat</h1>
+            </div>
+            <h2 className='rebeans-title' style={{ opacity: '0' }}>Fernglade</h2>
+
             <div className='bottom-slider'>
                 <div className="hero__illustration">
-                    <div className='filler filler-white'>
+                    <div className='filler filler-white' style={{ position: 'fixed', bottom: '0' }}>
+                        <img src={Pic} alt="Top Half" className="slider-image" />
                     </div>
                 </div>
             </div>
+
             <div className="trailer">
                 <div className="video-wrapper">
                     <video playsInline autoPlay muted loop>

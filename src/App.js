@@ -10,9 +10,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <MainBody />
       <div className='content'>
+        <Navbar />
         <LandingSection />
         <Products />
         <NewsLetter />

@@ -1,33 +1,37 @@
-.top-slider{
-  height: 100vh;
+.top-slider {
+  height: 50vh; /* Adjust the height to display the top half of the image */
   width: 100%;
   position: fixed;
   z-index: -2;
+  overflow: hidden;
 }
-.bottom-slider{
-  height: 100vh;
+.bottom-slider {
+  height: 50vh; /* Adjust the height to display the bottom half of the image */
   width: 100%;
   position: fixed;
   z-index: -2;
-  margin-top:490px;
+  overflow: hidden; /* Hide the overflow to only show the bottom half */
+  margin-top: 50vh;
 }
 
 .hero__illustration {
-  height: 50vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 100%; /* Adjust the height to fill the parent container */
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
+  justify-content: flex-start; /* Align the image to the top in the top-slider */
+  align-items: center;
 }
 .hero__illustration .filler:first-child {
-  padding-top: 58vh;
+  padding-top: 0;
 }
 
 .filler-white {
   background-color: #060628;
+}
+.slider-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .trailer {
@@ -63,77 +67,82 @@
 }
 
 .titleMain {
-  font-size: 120px;
-  font-weight: lighter;
-  width:60%;
+  position: fixed;
+  width: 60%;
+  height: auto;
   justify-content: center;
   z-index: -1;
-  top:35%;
-  left:19%;
-  color:white
+  top: 35%;
+  left: 19%;
+}
+.title-font {
+  font-size: 80px;
+  font-weight: 400;
+  color: #ffffff;
 }
 
-.rebeans-title{
+/* @keyframes color-transition {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+} */
+
+.rebeans-title {
   font-size: 120px;
   font-weight: lighter;
-  width:70%;
+  width: 70%;
   justify-content: center;
   z-index: -2;
   position: fixed;
   /* margin-top: 43vh; */
-  left:14%;
-  top:47%;
+  left: 14%;
+  top: 43%;
   color: aliceblue;
 }
 
 .content {
   /* pushs content below header hero & trailer (should equal trailer height after threshold) */
-  padding-top: 206vh;
-  
-  
+  padding-top: 228vh;
 }
-
-@media (max-width: 576px) {
-  .titleMain {
-    font-size: 90px;
-    width: 80%;
-    left: 10%;
-    top:35%
+@media screen and (max-width: 992px) {
+  .title-font {
+    font-size: 70px;
   }
-  .rebeans-title{
+  .rebeans-title {
     font-size: 80px;
     width: 80%;
     left: 10%;
-    
+    top: 46%;
   }
-  
 }
 
-@media (max-width: 768px) {
-  .titleMain {
-    font-size: 90px;
-    width: 80%;
-    left: 10%;
-    top:35%
+@media screen and (max-width: 768px) {
+  .title-font {
+    font-size: 60px;
   }
-  .rebeans-title{
+  .rebeans-title {
     font-size: 80px;
     width: 80%;
     left: 10%;
   }
 }
 
-@media (max-width: 992px) {
-  .titleMain {
-    font-size: 90px;
-    width: 80%;
-    left: 10%;
-    top:35%
+@media screen and (max-width: 576px) {
+  .titleMain{
+    width:80%;
+    left:10%;
   }
-  .rebeans-title{
+  .title-font {
+    font-size: 50px;
+  }
+  .rebeans-title {
     font-size: 80px;
     width: 80%;
     left: 10%;
-    top:51%
   }
 }
+
+
