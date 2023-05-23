@@ -4,15 +4,15 @@ import { faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg p-3" style={{backgroundColor:'white'}}>
+        <nav className="navbar navbar-expand-lg p-3" style={{backdropFilter:'blur(2px'}}>
             <div className="container-fluid">
-                <a className="navbar-brand nav-heading" href="!">Rebeans</a>
+                <a className="navbar-brand nav-heading" href="!">Fernglade</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div className="offcanvas-header">
-                        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Rebeans</h5>
+                        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Fernglade</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
                     </div>
                     <div className="offcanvas-body">

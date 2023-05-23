@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# public frames folder
+/public/frames
+
 # testing
 /coverage
 

@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <MainBody />
-      <div className='content'>
+      <div className='content' onClick={(e) => console.log("clicked content")}>
         <Navbar />
         <LandingSection />
         <Products />
