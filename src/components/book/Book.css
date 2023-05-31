@@ -1,0 +1,25 @@
+.sectionBook {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4rem;
+}
+
+.book-content {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .book-container {
+        padding: 1rem;
+        transition: all 0.3s ease-in-out;
+    }
+}

@@ -1,0 +1,240 @@
+.top-slider {
+    height: 50vh;
+    /* Adjust the height to display the top half of the image */
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bottom-slider {
+    height: 50vh;
+    /* Adjust the height to display the bottom half of the image */
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow: hidden;
+    /* Hide the overflow to only show the bottom half */
+    margin-top: 50vh;
+}
+
+.hero__illustration {
+    height: 100%;
+    /* Adjust the height to fill the parent container */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align the image to the top in the top-slider */
+    align-items: center;
+}
+
+.hero__illustration .filler:first-child {
+    padding-top: 0;
+}
+
+.filler-white {
+    background-color: #060628;
+}
+
+.slider-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.title-main {
+    border-radius: 50px;
+    position: fixed;
+    width: 65%;
+    height: auto;
+    backdrop-filter: blur(2px);
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title-font {
+    font-size: 80px !important;
+    font-weight: 400 !important;
+    color: #ffffff;
+}
+
+/* .video-scroll{
+    top:50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin-top:6% !important;
+    overflow-x: hidden !important;
+} */
+
+.intro {
+    height: 100vh;
+}
+
+.intro img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.intro-vid {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-vid video {
+    object-fit: cover !important;
+    height: 100%;
+    width: 100%;
+}
+
+/* animated arrow */
+
+.arrow {
+    position: absolute;
+    left: 50%;
+    margin-top: 10vh;
+}
+
+.arrow:before,
+.arrow:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -75px;
+    width: 60px;
+    height: 7px;
+    border-radius: 10px;
+    display: block;
+    background: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.arrow:after {
+    right: inherit;
+    left: -24px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.animated {
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s both infinite;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        -webkit-transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes bounce {
+    0% {
+        -webkit-transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes bounce {
+    0% {
+        -webkit-transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        -webkit-transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+/* animated arrow end */
+
+.rebeans-title-box{
+    padding:20px 60px;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rebeans-title {
+    transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+    .title-main {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .title-font {
+        font-size: 70px !important;
+    }
+
+    .rebeans-title {
+        font-size: 80px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title-main {
+        width: 90%;
+    }
+
+    .title-font {
+        font-size: 50px !important;
+    }
+
+    .rebeans-title {
+        font-size: 50px !important;
+        transition: all 0.5s ease-in-out;
+    }
+}

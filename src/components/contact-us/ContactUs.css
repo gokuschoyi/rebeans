@@ -1,0 +1,51 @@
+.sectionContactUs {
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:4rem;
+}
+
+.client-name-box-contact {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    padding-top: 10px;
+    /* margin-top: 10px; */
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.grid-card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.submit-form {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-us-container {
+        padding: 1rem;
+        transition: all 0.3s ease-in-out;
+    }
+}
