@@ -7,12 +7,12 @@ import { Autoplay, Pagination } from "swiper";
 import "swiper/css/pagination";
 import "swiper/css";
 
-import P1 from '../../assets/pics/p1.jpg'
-import P2 from '../../assets/pics/p2.jpg'
-import P3 from '../../assets/pics/p3.jpg'
-import P4 from '../../assets/pics/p4.jpg'
-import P5 from '../../assets/pics/p5.jpg'
-import P6 from '../../assets/pics/p6.jpg'
+import P1 from '../../Assets/pics/p1.jpg'
+import P2 from '../../Assets/pics/p2.jpg'
+import P3 from '../../Assets/pics/p3.jpg'
+import P4 from '../../Assets/pics/p4.jpg'
+import P5 from '../../Assets/pics/p5.jpg'
+import P6 from '../../Assets/pics/p6.jpg'
 
 const Landing = () => {
     const ImageHolder = ({ image }) => {

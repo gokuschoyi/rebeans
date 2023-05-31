@@ -6,7 +6,7 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import gsap from "gsap";
 import ScrollMagic from "scrollmagic";
 
-import Video from '../../assets/makki30fps.mp4'
+import Video from '../../Assets/makki30fps.mp4'
 
 ScrollMagicPluginGsap(ScrollMagic, gsap);
 

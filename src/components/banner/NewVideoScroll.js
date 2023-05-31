@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { Box } from '@mui/material'
-import Video from '../../assets/output1.mp4'
+import Video from '../../Assets/output1.mp4'
 
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import gsap from "gsap";

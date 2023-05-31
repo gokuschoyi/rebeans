@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './Banner.css'
-import Pic from '../../assets/main.jpg'
+import Pic from '../../Assets/main.jpg'
 import { Box, Typography, useTheme } from '@mui/material'
 
 // import VideoScroll from './VideoScroll'
