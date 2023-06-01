@@ -35,7 +35,7 @@ const NewVideoScroll = (props) => {
             let LPHeight, contentHeight;
             LPHeight = landingPage.getBoundingClientRect().height;
             contentHeight = content.getBoundingClientRect().height;
-            let totalHeight = Math.round(LPHeight + contentHeight);
+            let totalHeight = Math.round(LPHeight + contentHeight + 200);
             console.log(LPHeight, contentHeight, totalHeight)
 
             let video = videoRef.current,
