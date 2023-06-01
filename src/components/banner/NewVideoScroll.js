@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import { Box } from '@mui/material'
-import Video from '../../Assets/output1.mp4'
 
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import gsap from "gsap";
@@ -62,9 +61,8 @@ const NewVideoScroll = (props) => {
         >
             <video
                 ref={videoRef}
-                src={Video}
-                muted
-                preload='auto'
+                src="https://storage.cloud.google.com/fernglade-banner-video/output1.mp4"
+                muted                
                 className='video-scroll'
                 style={{ width: '100%', height: '100%', objectFit: 'cover', marginTop: '10%' }}
             ></video>

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Product.css'
-import { Box, Typography, Button, Divider } from '@mui/material'
+import { Box, Typography, Button, Divider, useMediaQuery } from '@mui/material'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
@@ -15,6 +15,8 @@ import P5 from '../../Assets/pics/p5.jpg'
 import P6 from '../../Assets/pics/p6.jpg'
 
 const Landing = () => {
+
+    const sm = useMediaQuery('(max-width:600px)')
     const ImageHolder = ({ image }) => {
         return (
             <Box className='image-holder-product'>
@@ -38,7 +40,7 @@ const Landing = () => {
                                 direction='horizontal'
                                 centeredSlides={true}
                                 modules={[Autoplay, Pagination]}
-                                slidesPerView={3}
+                                slidesPerView={sm ? 1 : 3}
                                 /* autoplay={{
                                     delay: 2500,
                                     disableOnInteraction: false,

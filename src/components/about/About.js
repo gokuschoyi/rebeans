@@ -39,7 +39,7 @@ const About = () => {
                     <Box display='flex' justifyContent='flex-start'>
                         <Typography variant='h1' textAlign='start'>About</Typography>
                     </Box>
-                    <Grid container className='about-box-one' spacing={{ sm: 2 }}>
+                    <Grid container className='about-box-one' spacing={{ xs: 2, sm: 2 }}>
                         <Grid item xs={12} sm={12} md={6} lg={6} xl={8} className='about-box-one-left center-col'>
                             <Box pl={2} pr={2} display='flex' flexDirection='column' gap={2} >
                                 <Typography variant='body1' textAlign='justify'>
