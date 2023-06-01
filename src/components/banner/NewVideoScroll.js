@@ -16,6 +16,20 @@ const NewVideoScroll = (props) => {
         if (!loadedRef.current) {
             loadedRef.current = true;
 
+            const largeScreen = "https://storage.cloud.google.com/fernglade-banner-video/output1.mp4"
+            const mobile = "https://storage.cloud.google.com/fernglade-banner-video/makki720p.mp4"
+
+            const screenWidth = window.innerWidth;
+            let selectedUrl;
+
+            if (screenWidth >= 1024) {
+                selectedUrl = largeScreen;
+            } else if (screenWidth <= 720) {
+                selectedUrl = mobile;
+            }
+
+            videoRef.current.src = selectedUrl;
+
             const landingPage = document.querySelector('.landing-page-container')
             const content = document.querySelector('.content')
             let LPHeight, contentHeight;
@@ -62,7 +76,7 @@ const NewVideoScroll = (props) => {
             <video
                 ref={videoRef}
                 src="https://storage.cloud.google.com/fernglade-banner-video/output1.mp4"
-                muted                
+                muted
                 className='video-scroll'
                 style={{ width: '100%', height: '100%', objectFit: 'cover', marginTop: '10%' }}
             ></video>
