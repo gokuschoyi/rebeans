@@ -37,14 +37,11 @@ const LandingPage = () => {
                         trigger: '.full-navbar',
                         start: 'top 40%',
                         end: 'top',
+                        markers: true,
                         onEnter: () => {
                             console.log("Navbar entered")
                             gsap.to('.full-navbar', {
                                 position: 'fixed',
-                                top: 0,
-                                left: 0,
-                                width: '100%',
-                                zIndex: 30,
                                 opacity: 1,
                                 duration: 1,
                             });
@@ -53,7 +50,7 @@ const LandingPage = () => {
                             console.log("Navbar left")
                             gsap.to('.full-navbar', {
                                 opacity: 0,
-                                zIndex: 'auto',
+                                
                                 duration: 0.5,
                             });
                         },
