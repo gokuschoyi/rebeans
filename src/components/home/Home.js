@@ -6,7 +6,7 @@ const Home = () => {
     const dimensions = { width: window.innerWidth, height: window.innerHeight }
 
     return (
-        <section className='sectionHome' id='home' style={{ backdropFilter: 'blur(2px)' }}>
+        <section className='sectionHome' id='home' style={{ backdropFilter: 'blur(2px)'}}>
             <Box className='home-container'>
                 <Box className='about-content'>
                     <Grid container spacing={2} className='home-container-grid'>
