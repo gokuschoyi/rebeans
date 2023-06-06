@@ -37,6 +37,7 @@ const LandingPage = () => {
                         trigger: '.full-navbar',
                         start: 'top 40%',
                         end: 'top',
+                        
                         // markers: true,
                         onEnter: () => {
                             console.log("Navbar entered")

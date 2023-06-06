@@ -4,13 +4,13 @@ import { Box, Typography, useTheme, TextField, Divider, Card, Button } from '@mu
 const ContactUs = () => {
     const theme = useTheme()
     return (
-        <section className='sectionContactUs' id='contact' style={{ backdropFilter: 'blur(2px)' }}>
+        <section className='sectionContactUs' id='contact'>
             <Box className='contact-us-container'>
                 <Box className='about-content'>
                     <Box display='flex' justifyContent='flex-start'>
-                        <Typography variant='h1' textAlign='start'>Contact Us</Typography>
+                        <Typography variant='h1' textAlign='start' pl={2}>Contact Us</Typography>
                     </Box>
-                    <Box display='flex' justifyContent='center' className='contat-card'>
+                    <Box display='flex' justifyContent='center' className='contat-card' p={2}>
                         <Card sx={{ boxShadow: 10, backgroundColor: `${theme.palette.background.paper}`, opacity: '0.5' }} className='grid-card-right'>
                             <Box className='client-name-box-contact'>
                                 <TextField

@@ -2,6 +2,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* backdrop-filter: blur(2px); */
 }
 
 .about-container {

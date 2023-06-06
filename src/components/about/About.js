@@ -33,11 +33,11 @@ const About = () => {
         )
     }
     return (
-        <section className='sectionAbout' id='about' style={{ backdropFilter: 'blur(2px)' }}>
+        <section className='sectionAbout' id='about'>
             <Box className='about-container'>
                 <Box className='about-content'>
                     <Box display='flex' justifyContent='flex-start'>
-                        <Typography variant='h1' textAlign='start'>About</Typography>
+                        <Typography variant='h1' textAlign='start' p={2}>About</Typography>
                     </Box>
                     <Grid container className='about-box-one' spacing={{ xs: 2, sm: 2 }}>
                         <Grid item xs={12} sm={12} md={6} lg={6} xl={8} className='about-box-one-left center-col'>
@@ -134,16 +134,16 @@ const About = () => {
                             </Swiper>
                         </Grid>
                         <Grid item xs={12} sm={12} md={6} lg={7} xl={8} className='about-box-two-left center-col'>
-                            <Typography variant='body1' textAlign='justify'>
+                            <Typography variant='body1' textAlign='justify' p={2}>
                                 Nature enthusiasts will be captivated by the abundant biodiversity of Wayanad. Explore dense forests, encounter exotic wildlife, and witness breathtaking sunrises and sunsets from scenic viewpoints. The region's cascading waterfalls, pristine rivers, and rolling hills provide a soothing backdrop that fills you with awe and wonder. At Fernglade Estate, our resort harmoniously blends with the natural surroundings. Experience the cozy and comfortable accommodations, designed to provide a serene and restful stay. Stroll through lush gardens, connecting with the vibrant flora and fauna that flourish here.
                             </Typography>
                         </Grid>
                     </Grid>
 
-                    <Typography variant='body1' textAlign='justify'>
+                    <Typography variant='body1' textAlign='justify' p={2}>
                         Surrounding the estate, a wealth of attractions awaits. Discover ancient caves, visit historic temples, and embark on wildlife safaris in nearby national parks. Engage in thrilling adventures like bamboo rafting, zip-lining, and trekking, immersing yourself in the exhilarating beauty of the landscape. Delight in authentic local cuisine, rich in flavors and spices, tantalizing your taste buds with the unique culinary delights of Wayanad.
                     </Typography>
-                    <Typography variant='body1' textAlign='justify'>
+                    <Typography variant='body1' textAlign='justify' p={2}>
                         Fernglade Estate offers an unforgettable experience, where tranquility, nature, and warm hospitality merge to create an enchanting getaway. Allow yourself to be captivated by the serene atmosphere, the abundance of natural beauty, and the opportunity to reconnect with yourself amidst the mountains of Wayanad.
                     </Typography>
                 </Box>

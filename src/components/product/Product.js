@@ -26,13 +26,13 @@ const Landing = () => {
     }
 
     return (
-        <section className='sectionProduct' id='product' style={{ backdropFilter: 'blur(2px)' }}>
+        <section className='sectionProduct' id='product'>
             <Box className='product-container'>
                 <Box className='about-content'>
                     <Box display='flex' justifyContent='flex-start' flexDirection='column' width='100%'>
-                        <Typography textAlign='flex-start' display='flex' variant='h4' >COFFEE BY</Typography>
-                        <Typography textAlign='flex-start' display='flex' variant='h1'>Rebeans</Typography>
-                        <Typography textAlign='flex-start' display='flex' variant='h5' >For Those Who Love The Best</Typography>
+                        <Typography textAlign='flex-start' display='flex' variant='h4' pl={1}>COFFEE BY</Typography>
+                        <Typography textAlign='flex-start' display='flex' variant='h1' pl={1}>Rebeans</Typography>
+                        <Typography textAlign='flex-start' display='flex' variant='h5' pl={1}>For Those Who Love The Best</Typography>
 
                         <Box className='product-box'>
                             <Swiper

@@ -4,6 +4,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import gsap from "gsap";
 
+// ffmpeg -i Ma720pS.mp4 -movflags faststart -crf 26 -g 1 M720pS.mp4
+
 const NewVideoScroll = (props) => {
     const { frameRate } = props
     const theme = useTheme()
@@ -12,22 +14,32 @@ const NewVideoScroll = (props) => {
     const sm = useMediaQuery(theme.breakpoints.down('sm'));
 
     const videoUrlBasedOnScreenSize = () => {
-        const xl = "https://storage.googleapis.com/fernglade-banner-video/makki720pS.mp4" // 720x720
-        const largeScreenH = "https://storage.googleapis.com/fernglade-banner-video/makki960p.mp4" // 960x540
-        const mediumScreen = "https://storage.googleapis.com/fernglade-banner-video/makki704p.mp4" // 704x369
-        const smallScreenV = "https://storage.googleapis.com/fernglade-banner-video/makki960pV.mp4" // 540x960
+        const videoLinks = {
+            videoOne: {
+                xl: "https://storage.googleapis.com/fernglade-banner-video/makki720pS.mp4", // 720x720
+                largeScreenH: "https://storage.googleapis.com/fernglade-banner-video/makki960p.mp4", // 960x540
+                mediumScreen: "https://storage.googleapis.com/fernglade-banner-video/makki704p.mp4", // 704x369
+                smallScreenV: "https://storage.googleapis.com/fernglade-banner-video/makki960pV.mp4", // 540x960
+            },
+            videoTwo: {
+                xl: "https://storage.googleapis.com/fernglade-banner-video/M720pSHQ.mp4",
+                largeScreenH: "https://storage.googleapis.com/fernglade-banner-video/M960pHHD.mp4",
+                mediumScreen: "https://storage.googleapis.com/fernglade-banner-video/M704p.mp4",
+                smallScreenV: "https://storage.googleapis.com/fernglade-banner-video/M960pVHD.mp4",
+            }
+        }
 
         const screenWidth = window.innerWidth;
         let selectedUrl;
 
         if (screenWidth > 1500) {
-            selectedUrl = xl
+            selectedUrl = videoLinks.videoTwo.xl
         } else if (screenWidth > 1200 && screenWidth <= 1500) {
-            selectedUrl = largeScreenH;
+            selectedUrl = videoLinks.videoTwo.largeScreenH;
         } else if (screenWidth > 600 && screenWidth < 1200) {
-            selectedUrl = mediumScreen;
+            selectedUrl = videoLinks.videoTwo.mediumScreen;
         } else if (screenWidth < 600) {
-            selectedUrl = smallScreenV;
+            selectedUrl = videoLinks.videoTwo.smallScreenV;
         }
         return selectedUrl
     }
@@ -48,13 +60,15 @@ const NewVideoScroll = (props) => {
             loadedRef.current = true;
 
             let video = videoRef.current,
-                frameNumber = 0;
+                frameNumber = 0,
+                prevFrame = 0;
 
             let selectedUrl = videoUrlBasedOnScreenSize()
             let totalHeight = getContentHeightForScroll()
 
             // console.log(selectedUrl, totalHeight)
             video.src = selectedUrl;
+
 
             const videoScrollTL = gsap.timeline({
                 default: { duration: 1 },
@@ -66,17 +80,20 @@ const NewVideoScroll = (props) => {
                     scrub: 2,
                     // markers: true,
                     onUpdate: self => {
-                        frameNumber = parseFloat(((self.progress * 449) / frameRate).toFixed(6));
+                        frameNumber = parseFloat(((self.progress * 449) / frameRate).toFixed(3));
                         if (!isNaN(frameNumber)) {
-                            // console.log(self.progress, frameNumber)
-                            video.currentTime = frameNumber;
+                            if (frameNumber !== prevFrame) {
+                                prevFrame = frameNumber;
+                                // console.log(self.progress, frameNumber)
+                                video.currentTime = frameNumber;
+                            }
                         }
                     }
                 }
             })
 
             video.addEventListener('loadeddata', function () {
-                videoScrollTL.to({}, {})
+                videoScrollTL.play('.video-container')
             })
 
             video.addEventListener('error', function (event) {
