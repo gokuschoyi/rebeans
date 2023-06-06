@@ -33,13 +33,13 @@ const NewVideoScroll = (props) => {
         let selectedUrl;
 
         if (screenWidth > 1500) {
-            selectedUrl = videoLinks.videoTwo.xl
+            selectedUrl = videoLinks.videoOne.xl
         } else if (screenWidth > 1200 && screenWidth <= 1500) {
-            selectedUrl = videoLinks.videoTwo.largeScreenH;
+            selectedUrl = videoLinks.videoOne.largeScreenH;
         } else if (screenWidth > 600 && screenWidth < 1200) {
-            selectedUrl = videoLinks.videoTwo.mediumScreen;
+            selectedUrl = videoLinks.videoOne.mediumScreen;
         } else if (screenWidth < 600) {
-            selectedUrl = videoLinks.videoTwo.smallScreenV;
+            selectedUrl = videoLinks.videoOne.smallScreenV;
         }
         return selectedUrl
     }
@@ -117,7 +117,7 @@ const NewVideoScroll = (props) => {
                 <Grid className='video-grid-item' item xs={12} sm={12} md={12} lg={11} xl={6}>
                     <video
                         ref={videoRef}
-                        src="https://storage.cloud.google.com/fernglade-banner-video/makki960pV.mp4"
+                        src="https://storage.googleapis.com/fernglade-banner-video/makki960p.mp4"
                         muted
                         preload={sm ? 'auto' : 'metadata'}
                         className='video-scroll'

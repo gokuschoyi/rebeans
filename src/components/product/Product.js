@@ -2,10 +2,11 @@ import React from 'react'
 import './Product.css'
 import { Box, Typography, Button, Divider, useMediaQuery } from '@mui/material'
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
+import "swiper/css/pagination";
 import "swiper/css/pagination";
 import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 import P1 from '../../Assets/pics/p1.jpg'
 import P2 from '../../Assets/pics/p2.jpg'
@@ -39,8 +40,8 @@ const Landing = () => {
                                 className="mySwiper-product"
                                 direction='horizontal'
                                 centeredSlides={true}
-                                modules={[Autoplay, Pagination]}
-                                slidesPerView={sm ? 1 : 3}
+                                modules={[Autoplay, Pagination, Navigation]}
+                                slidesPerView={sm ? 1 : 2}
                                 /* autoplay={{
                                     delay: 2500,
                                     disableOnInteraction: false,

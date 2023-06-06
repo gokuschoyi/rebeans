@@ -30,6 +30,18 @@
     align-items: center;
 }
 
+.swiper-button-prev {
+    color: #d9641c !important;
+}
+
+.swiper-button-next {
+    color: #d9641c !important;
+}
+
+.swiper-pagination span {
+    background-color: #fff !important;
+}
+
 .image-holder {
     border-radius: 10px !important;
     cursor: pointer;

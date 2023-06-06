@@ -30,19 +30,14 @@ const LandingPage = () => {
             console.log("UseEffect : Landing Page")
             handleContentLoad = () => {
                 gsap.to('.full-navbar', {
-                    position: 'relative',
-                    zIndex: '30',
                     duration: 1,
                     scrollTrigger: {
-                        trigger: '.full-navbar',
-                        start: 'top 40%',
-                        end: 'top',
-                        
-                        // markers: true,
+                        trigger: '.sectionHome',
+                        start: 'top 60%',
+                        end: 'top 10%',
                         onEnter: () => {
                             console.log("Navbar entered")
                             gsap.to('.full-navbar', {
-                                position: 'fixed',
                                 opacity: 1,
                                 duration: 1,
                             });
@@ -51,8 +46,7 @@ const LandingPage = () => {
                             console.log("Navbar left")
                             gsap.to('.full-navbar', {
                                 opacity: 0,
-                                
-                                duration: 0.5,
+                                duration: 0.7,
                             });
                         },
                     },
@@ -163,8 +157,8 @@ const LandingPage = () => {
     return (
         <Box className='landing-page-container' sx={{ backgroundColor: `${theme.palette.secondary.main}` }} >
             <Banner />
+            <Navbar scrolledIntoView={scrolledIntoView} />
             <Box className='content' sx={contentStyles}>
-                <Navbar scrolledIntoView={scrolledIntoView} />
                 <Grid container sx={{ display: 'flex', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                         <Box className='sections-contianier'>

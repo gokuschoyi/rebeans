@@ -19,10 +19,12 @@ import {
     SecSix
 }
     from './Images'
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
-import "swiper/css/pagination";
+
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 const About = () => {
     const ImageHolder = ({ image }) => {
@@ -55,7 +57,7 @@ const About = () => {
                                 className="mySwiper-one"
                                 direction='horizontal'
                                 centeredSlides={true}
-                                modules={[Autoplay, Pagination]}
+                                modules={[Autoplay, Pagination, Navigation]}
                                 /* autoplay={{
                                     delay: 2500,
                                     disableOnInteraction: false,
@@ -64,6 +66,7 @@ const About = () => {
                                     clickable: true,
                                     dynamicBullets: true,
                                 }}
+
                                 loop={true}
                                 navigation={true}
                             >
@@ -101,7 +104,7 @@ const About = () => {
                                 className="mySwiper-two"
                                 direction='horizontal'
                                 centeredSlides={true}
-                                modules={[Autoplay, Pagination]}
+                                modules={[Autoplay, Pagination, Navigation]}
                                 /* autoplay={{
                                     delay: 2500,
                                     disableOnInteraction: false,
