@@ -61,9 +61,9 @@ const NewVideoScroll = (props) => {
         if (!loadedRef.current) {
             loadedRef.current = true;
 
-            let video = videoRef.current,
-                frameNumber = 0,
-                prevFrame = 0;
+            let video = videoRef.current;
+            // let frameNumber = 0;
+            // let prevFrame = 0;
 
             let selectedUrl = videoUrlBasedOnScreenSize()
             let totalHeight = getContentHeightForScroll()
@@ -71,6 +71,7 @@ const NewVideoScroll = (props) => {
             // console.log(selectedUrl, totalHeight)
             video.src = selectedUrl;
 
+            let offset = 0;
 
             const videoScrollTL = gsap.timeline({
                 default: { duration: 1 },
@@ -82,14 +83,21 @@ const NewVideoScroll = (props) => {
                     scrub: 2,
                     // markers: true,
                     onUpdate: self => {
-                        frameNumber = parseFloat(((self.progress * 449) / frameRate).toFixed(3));
+                        offset += ((self.progress) - offset) * 0.09;
+                        let fTime = parseFloat(((offset * 450) / frameRate).toFixed(3));
+                        // console.log(self.progress, fTime)
+                        if (!isNaN(fTime)) {
+                            video.currentTime = fTime;
+                        }
+
+                        /* frameNumber = parseFloat(((self.progress * 449) / frameRate).toFixed(3));
                         if (!isNaN(frameNumber)) {
                             if (frameNumber !== prevFrame) {
                                 prevFrame = frameNumber;
                                 // console.log(self.progress, frameNumber)
                                 video.currentTime = frameNumber;
                             }
-                        }
+                        } */
                     }
                 }
             })
@@ -103,8 +111,8 @@ const NewVideoScroll = (props) => {
                 console.log('Video loading error:', event);
             }, false);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+
+    }, [frameRate])
 
     return (
         <Box className='video-container'
