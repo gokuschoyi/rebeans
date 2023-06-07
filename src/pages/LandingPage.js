@@ -157,7 +157,7 @@ const LandingPage = () => {
     }, []);
 
     return (
-        <Box className='landing-page-container' sx={{ backgroundColor: `${theme.palette.secondary.main}`, height:'100vh' }} >
+        <Box className='landing-page-container' sx={{ backgroundColor: `${theme.palette.secondary.main}`, height: '100vh' }} >
             <Banner />
             <Navbar scrolledIntoView={scrolledIntoView} />
             <Box className='content' sx={contentStyles}>

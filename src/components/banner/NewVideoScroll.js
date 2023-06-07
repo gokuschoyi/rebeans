@@ -62,16 +62,14 @@ const NewVideoScroll = (props) => {
             loadedRef.current = true;
 
             let video = videoRef.current;
-            // let frameNumber = 0;
-            // let prevFrame = 0;
+            let frameNumber = 0;
+            let prevFrame = 0;
 
             let selectedUrl = videoUrlBasedOnScreenSize()
             let totalHeight = getContentHeightForScroll()
 
             // console.log(selectedUrl, totalHeight)
             video.src = selectedUrl;
-
-            let offset = 0;
 
             const videoScrollTL = gsap.timeline({
                 default: { duration: 1 },
@@ -83,21 +81,14 @@ const NewVideoScroll = (props) => {
                     scrub: 2,
                     // markers: true,
                     onUpdate: self => {
-                        offset += ((self.progress) - offset) * 0.09;
-                        let fTime = parseFloat(((offset * 450) / frameRate).toFixed(3));
-                        // console.log(self.progress, fTime)
-                        if (!isNaN(fTime)) {
-                            video.currentTime = fTime;
-                        }
-
-                        /* frameNumber = parseFloat(((self.progress * 449) / frameRate).toFixed(3));
+                        frameNumber = parseFloat(((self.progress * 449) / frameRate).toFixed(3));
                         if (!isNaN(frameNumber)) {
                             if (frameNumber !== prevFrame) {
                                 prevFrame = frameNumber;
                                 // console.log(self.progress, frameNumber)
                                 video.currentTime = frameNumber;
                             }
-                        } */
+                        }
                     }
                 }
             })

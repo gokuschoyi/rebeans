@@ -50,7 +50,7 @@ const Scroll = (props) => {
         LPHeight = landingPage.getBoundingClientRect().height;
         contentHeight = content.getBoundingClientRect().height;
         totalHeight = Math.round(LPHeight + contentHeight + 200);
-        console.log(LPHeight, contentHeight)
+        // console.log(LPHeight, contentHeight)
         return totalHeight
     }
 
