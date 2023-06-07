@@ -3,8 +3,8 @@ import './Banner.css'
 import Pic from '../../Assets/main.jpg'
 import { Box, Typography, useTheme } from '@mui/material'
 
-// import VideoScroll from './VideoScroll'
-import VideoScroll from './NewVideoScroll'
+// import VideoScroll from './NewVideoScroll'
+import VideoScroll from './Scroll'
 
 const Banner = () => {
     const theme = useTheme()

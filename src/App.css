@@ -7,14 +7,17 @@
   h1 {
     font-size: 3rem !important;
   }
+
   h3 {
     font-size: 2.5rem !important;
   }
-  .rebeans-title-box{
-    padding:20px 30px !important;
+
+  .rebeans-title-box {
+    padding: 20px 30px !important;
   }
+
   .image-holder img {
-    height:200px !important;
+    height: 200px !important;
   }
 }
 

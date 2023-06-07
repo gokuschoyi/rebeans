@@ -2,13 +2,15 @@ import React, { useEffect, useRef } from 'react'
 import { Box, useTheme, Grid } from '@mui/material'
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import Banner from '../components/banner/Banner'
-import Navbar from '../components/navbar/Navbar'
-import Home from '../components/home/Home'
-import About from '../components/about/About'
-import Product from '../components/product/Product'
-import Book from '../components/book/Book'
-import ContactUS from '../components/contact-us/ContactUs'
+import {
+    Banner,
+    Navbar,
+    Home,
+    About,
+    Product,
+    Book,
+    ContactUS
+} from '../components'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -155,7 +157,7 @@ const LandingPage = () => {
     }, []);
 
     return (
-        <Box className='landing-page-container' sx={{ backgroundColor: `${theme.palette.secondary.main}` }} >
+        <Box className='landing-page-container' sx={{ backgroundColor: `${theme.palette.secondary.main}`, height:'100vh' }} >
             <Banner />
             <Navbar scrolledIntoView={scrolledIntoView} />
             <Box className='content' sx={contentStyles}>

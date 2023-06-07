@@ -1,18 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 import { Box, Grid, useTheme } from '@mui/material'
 import useMediaQuery from '@mui/material/useMediaQuery';
+import './Banner.css'
 
-import gsap from "gsap";
+//  video scrubbing based on requestanimationframe
 
-// ffmpeg -i Ma720pS.mp4 -movflags faststart -crf 26 -g 1 M720pS.mp4
-
-//scrolling based on gsap settings
-
-const NewVideoScroll = (props) => {
+const Scroll = (props) => {
     const { frameRate } = props
     const theme = useTheme()
     const videoRef = useRef(null);
-    const loadedRef = useRef(false);
     const sm = useMediaQuery(theme.breakpoints.down('sm'));
 
     const videoUrlBasedOnScreenSize = () => {
@@ -54,63 +50,55 @@ const NewVideoScroll = (props) => {
         LPHeight = landingPage.getBoundingClientRect().height;
         contentHeight = content.getBoundingClientRect().height;
         totalHeight = Math.round(LPHeight + contentHeight + 200);
+        console.log(LPHeight, contentHeight)
         return totalHeight
     }
 
+    const loadedRef = useRef(false);
     useEffect(() => {
         if (!loadedRef.current) {
             loadedRef.current = true;
-
-            let video = videoRef.current,
-                frameNumber = 0,
-                prevFrame = 0;
-
             let selectedUrl = videoUrlBasedOnScreenSize()
-            let totalHeight = getContentHeightForScroll()
-
-            // console.log(selectedUrl, totalHeight)
+            let tHeight = getContentHeightForScroll()
+            let offset = 0;
+            let video = videoRef.current;
             video.src = selectedUrl;
 
-
-            const videoScrollTL = gsap.timeline({
-                default: { duration: 1 },
-                scrollTrigger: {
-                    trigger: '.video-container',
-                    pin: true,
-                    start: 'top top',
-                    end: `${totalHeight}`,
-                    scrub: 2,
-                    // markers: true,
-                    onUpdate: self => {
-                        frameNumber = parseFloat(((self.progress * 449) / frameRate).toFixed(3));
-                        if (!isNaN(frameNumber)) {
-                            if (frameNumber !== prevFrame) {
-                                prevFrame = frameNumber;
-                                // console.log(self.progress, frameNumber)
-                                video.currentTime = frameNumber;
-                            }
-                        }
-                    }
-                }
-            })
+            const smoothScroll = () => {
+                offset += ((window.pageYOffset / tHeight) - offset) * 0.04;
+                let fTime = parseFloat(((offset * 450) / frameRate).toFixed(3));
+                video.currentTime = fTime;
+                requestAnimationFrame(smoothScroll);
+            }
 
             video.addEventListener('loadeddata', function () {
-                videoScrollTL.play('.video-container')
+                console.log('video loaded')
+                requestAnimationFrame(smoothScroll);
             })
 
             video.addEventListener('error', function (event) {
                 // Handle error
                 console.log('Video loading error:', event);
             }, false);
+
+            return () => {
+                video.removeEventListener('loadeddata', function () {
+                    requestAnimationFrame(smoothScroll);
+                })
+                video.removeEventListener('error', function (event) {
+                    // Handle error
+                    console.log('Video loading error:', event);
+                }, false);
+            }
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [frameRate])
 
     return (
         <Box className='video-container'
             style={{
                 width: '100%',
                 height: '100vh',
+                position: 'fixed',
                 backgroundColor: `${theme.palette.secondary.light}`
             }}
         >
@@ -127,9 +115,8 @@ const NewVideoScroll = (props) => {
                     ></video>
                 </Grid>
             </Grid>
-
-        </Box >
+        </Box>
     )
 }
 
-export default NewVideoScroll
+export default Scroll
